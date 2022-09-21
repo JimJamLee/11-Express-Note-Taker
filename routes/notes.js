@@ -43,8 +43,8 @@ notes.post('/', (req, res) => {
 });
 
 notes.delete("/:id", (req, res) => {
-    const id = parseInt(req.params.id);
-    for (let i = 0; i < notesData.length; ++i) {
+    const id = [req.params.id];
+    for (let i = 0; i < notesData.length; i++) {
       if (id === notesData[i].id) {
         notesData.splice(i, 1);
         return;
